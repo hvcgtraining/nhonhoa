@@ -1,0 +1,27 @@
+$blue: blue;
+
+// TEXTs
+
+$text-colors: () !default;
+$text-colors: map-merge((
+    "text-blue": $blue
+) , $text-colors);
+
+@each $name,$color in $text-colors{
+    .#{$name}{
+        color: $color;
+    }
+}
+
+// BACKGROUNDs
+
+$bg-color: () !default;
+$bg-color: map-merge((
+    "bg-green": lighten($blue,10%)
+), $bg-color);
+
+@each $name,$color in $bg-color{
+    .#{$name}{
+        background-color: $color;
+    }
+}
